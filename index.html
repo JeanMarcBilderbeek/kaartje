@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v30">
+<meta name="versie" content="v31">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -57,7 +57,7 @@
   .actie .wa { background:linear-gradient(145deg,#3fe07c,#1faa52); }
   .actie .mail { background:linear-gradient(145deg,#ff8a3d,var(--oranje)); }
   .actie .li { background:linear-gradient(145deg,#2b86e0,#0a66c2); }
-  .adresblok { display:flex; align-items:center; gap:12px; margin:12px 22px 0; padding:12px 14px; border-radius:16px; background:#eef4fb; color:var(--blauw); text-decoration:none; }
+  .adresblok { display:flex; align-items:center; gap:12px; margin:6px 22px 0; padding:12px 14px; border-radius:16px; background:#eef4fb; color:var(--blauw); text-decoration:none; }
   .adresblok .pin { width:36px; height:36px; flex:none; border-radius:50%; background:var(--blauw); color:#fff; display:grid; place-items:center; }
   .adresblok .pin svg { width:18px; height:18px; fill:currentColor; }
   .adresblok .tekst { flex:1; line-height:1.35; }
@@ -284,12 +284,6 @@
     <a class="actie" href="https://www.linkedin.com/in/jmbilderbeek" target="_blank" rel="noopener"><span class="r li"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.3 18.3V10H5.7v8.3zM7 8.8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11.3 9.5v-4.6c0-2.4-1.3-3.6-3.1-3.6a2.7 2.7 0 0 0-2.4 1.3V10h-2.6v8.3h2.6v-4.4c0-1.2.2-2.3 1.6-2.3s1.4 1.3 1.4 2.4v4.3z"/></svg></span>LinkedIn</a>
   </nav>
 
-  <a class="adresblok" href="https://www.google.com/maps/dir/?api=1&amp;destination=Prins+Frederikplein+514,+3071+KS+Rotterdam" target="_blank" rel="noopener">
-    <span class="pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
-    <span class="tekst"><b>Prins Frederikplein 514</b><small>3071 KS Rotterdam</small></span>
-    <span class="route">Route ›</span>
-  </a>
-
   <div class="knoppen">
     <a class="knop hoofd" href="https://jeanmarcbilderbeek.github.io/kaartje/jean-marc-bilderbeek.vcf">Zet me in je contacten</a>
     <dl class="contacttip"><dt>iPhone</dt><dd>tik daarna op <b>Maak nieuw contact</b></dd><dt>Android</dt><dd>tik op <b>Openen</b> en kies Contacten</dd></dl>
@@ -298,6 +292,12 @@
       <button class="knop tweede" onclick="openDeel()">Toon QR-code</button>
     </div>
   </div>
+
+  <a class="adresblok" href="https://www.google.com/maps/dir/?api=1&amp;destination=Prins+Frederikplein+514,+3071+KS+Rotterdam" target="_blank" rel="noopener">
+    <span class="pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+    <span class="tekst"><b>Prins Frederikplein 514</b><small>3071 KS Rotterdam</small></span>
+    <span class="route">Route ›</span>
+  </a>
 
   <section>
     <p class="kicker">Over mij</p>
@@ -495,7 +495,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v30';
+  const mijnVersie = 'v31';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
