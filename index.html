@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
+<meta name="versie" content="v25">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -372,7 +373,18 @@
   bijwerken();
   if (location.hash === '#qr') openDeel();
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
+  // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
+  const mijnVersie = 'v25';
+  function checkVersie() {
+    if (!navigator.onLine) return;
+    fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
+      const m = t.match(/name="versie" content="([^"]+)"/);
+      if (m && m[1] !== mijnVersie) location.reload();
+    }).catch(() => {});
+  }
+  checkVersie();
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkVersie(); });
 </script>
 </body>
 </html>
