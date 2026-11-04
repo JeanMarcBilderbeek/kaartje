@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v33">
+<meta name="versie" content="v34">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -340,12 +340,12 @@
   <section>
     <p class="kicker">Over mij</p>
     <h2>Verandering die van binnenuit komt</h2>
-    <p>Sinds 1998 help ik organisaties, teams en mensen in beweging. Sinds 2008 doe ik dat met Kaderloos, voor zo'n 150 opdrachtgevers. Van Rijkswaterstaat en ProRail tot Google en TU Delft.</p>
+    <p>Sinds 1998 help ik organisaties, teams en mensen in beweging. Sinds 2008 doe ik dat met Kaderloos: 150+ opdrachten bij 50+ opdrachtgevers. Van Rijkswaterstaat en ProRail tot Google en TU Delft.</p>
     <p>Fusie, ICT-implementatie, een team dat vastloopt of jij die wilt groeien. Ik ontwikkel outside-the-box oplossingen voor jouw inside-the-box uitdagingen.</p>
     <div class="quote">"People want to change, not to be changed."</div>
     <div class="feiten">
       <div class="feit"><b>1998</b><span>aan de slag</span></div>
-      <div class="feit"><b>±150</b><span>opdrachtgevers</span></div>
+      <div class="feit"><b>150+</b><span>opdrachten</span></div>
       <div class="feit"><b>2013</b><span>keynote spreker</span></div>
     </div>
   </section>
@@ -533,7 +533,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v33';
+  const mijnVersie = 'v34';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
