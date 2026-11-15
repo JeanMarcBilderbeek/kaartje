@@ -1,6 +1,6 @@
 // Bewaart het kaartje op de telefoon, zodat het ook zonder internet opent.
-const CACHE = 'kaartje-v37';
-const BASIS = ['./', './jean-marc-bilderbeek.vcf', './manifest.webmanifest', './icoon-180.png', './icoon-192.png', './icoon-512.png', './kvn-de-kracht-van-verwondering.jpg'];
+const CACHE = 'kaartje-v38';
+const BASIS = ['./', './jean-marc-bilderbeek.vcf', './Jean-Marc%20Bilderbeek%20-%20Kaderloos.vcf', './manifest.webmanifest', './icoon-180.png', './icoon-192.png', './icoon-512.png', './kvn-de-kracht-van-verwondering.jpg'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(BASIS))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {

@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v37">
+<meta name="versie" content="v38">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -334,7 +334,7 @@
   </a>
 
   <div class="knoppen">
-    <a class="knop hoofd" href="https://vcard.kaderloos.nl/jean-marc-bilderbeek.vcf">Zet me in je contacten</a>
+    <a class="knop hoofd" href="https://vcard.kaderloos.nl/Jean-Marc%20Bilderbeek%20-%20Kaderloos.vcf">Zet me in je contacten</a>
     <dl class="contacttip"><dt>iPhone</dt><dd>tik daarna op <b>Maak nieuw contact</b></dd><dt>Android</dt><dd>tik op <b>Openen</b> en kies Contacten</dd></dl>
     <div class="knoprij">
       <button class="knop tweede" onclick="openNaamkaart()">Toon naamkaart</button>
@@ -545,7 +545,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v37';
+  const mijnVersie = 'v38';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
