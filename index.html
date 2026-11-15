@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v39">
+<meta name="versie" content="v40">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -104,9 +104,19 @@
   .adresblok .tekst b { display:block; font-size:15px; }
   .adresblok .tekst small { color:var(--grijs); font-size:13px; }
   .adresblok .route { flex:none; padding:7px 12px; border-radius:999px; background:var(--oranje); color:#fff; font-size:13px; font-weight:600; }
-  .adresblok.agenda { margin:14px 22px 0; }
-  .adresblok.agenda .pin { background:var(--oranje); }
-  .adresblok.agenda .route { background:var(--blauw); }
+  .adresblok.agenda { position:relative; overflow:hidden; margin:14px 22px 0; padding:16px 16px; border-radius:20px; background:linear-gradient(135deg, var(--blauw) 0%, #0a5cb8 60%, #1b72d1 100%); color:#fff; box-shadow:0 10px 24px -10px rgba(0,68,138,.55); transition:transform .15s ease, box-shadow .15s ease; }
+  .adresblok.agenda::after { content:""; position:absolute; top:0; left:-60%; width:40%; height:100%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.22), transparent); transform:skewX(-20deg); animation:glans 4.5s ease-in-out 1.2s infinite; pointer-events:none; }
+  @keyframes glans { 0% { left:-60%; } 35%, 100% { left:130%; } }
+  .adresblok.agenda:active { transform:scale(.98); box-shadow:0 6px 14px -8px rgba(0,68,138,.6); }
+  .adresblok.agenda .pin { width:42px; height:42px; background:var(--oranje); box-shadow:0 0 0 0 rgba(247,99,12,.6); animation:puls 2.4s ease-out infinite; }
+  @keyframes puls { 0% { box-shadow:0 0 0 0 rgba(247,99,12,.55); } 70%, 100% { box-shadow:0 0 0 12px rgba(247,99,12,0); } }
+  .adresblok.agenda .pin svg { width:20px; height:20px; }
+  .adresblok.agenda .tekst b { font-size:15.5px; color:#fff; }
+  .adresblok.agenda .tekst small { color:rgba(255,255,255,.82); }
+  .adresblok.agenda .route { background:var(--oranje); padding:9px 14px; font-size:13.5px; box-shadow:0 4px 10px -4px rgba(0,0,0,.35); }
+  .adresblok.agenda .route i { display:inline-block; font-style:normal; transition:transform .2s ease; }
+  .adresblok.agenda:hover .route i { transform:translateX(3px); }
+  @media (prefers-reduced-motion: reduce) { .adresblok.agenda::after, .adresblok.agenda .pin { animation:none; } }
   .knoppen { padding:12px 22px 6px; display:grid; gap:10px; }
   .knop { display:block; width:100%; text-align:center; text-decoration:none; border:0; cursor:pointer; padding:16px; border-radius:14px; font:700 17px 'Space Grotesk'; }
   .contacttip { display:grid; grid-template-columns:auto 1fr; gap:4px 10px; margin:-2px 4px 4px; font-size:13px; line-height:1.35; color:var(--grijs); }
@@ -329,8 +339,8 @@
 
   <a class="adresblok agenda" href="https://calendly.com/jmbilderbeek-kaderloos/verkenningsgesprek" target="_blank" rel="noopener">
     <span class="pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zm12 8H5v10h14zM7 12h4v4H7z"/></svg></span>
-    <span class="tekst"><b>Plan een verkenningsgesprek</b><small>30 minuten via Zoom</small></span>
-    <span class="route">Kies tijd ›</span>
+    <span class="tekst"><b>Plan een online verkenningsgesprek met me</b><small>30 minuten via Zoom</small></span>
+    <span class="route">Kies tijd <i>›</i></span>
   </a>
 
   <div class="knoppen">
@@ -546,7 +556,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v39';
+  const mijnVersie = 'v40';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
