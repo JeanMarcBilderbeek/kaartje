@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v36">
+<meta name="versie" content="v37">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -104,6 +104,9 @@
   .adresblok .tekst b { display:block; font-size:15px; }
   .adresblok .tekst small { color:var(--grijs); font-size:13px; }
   .adresblok .route { flex:none; padding:7px 12px; border-radius:999px; background:var(--oranje); color:#fff; font-size:13px; font-weight:600; }
+  .adresblok.agenda { margin:14px 22px 0; }
+  .adresblok.agenda .pin { background:var(--oranje); }
+  .adresblok.agenda .route { background:var(--blauw); }
   .knoppen { padding:12px 22px 6px; display:grid; gap:10px; }
   .knop { display:block; width:100%; text-align:center; text-decoration:none; border:0; cursor:pointer; padding:16px; border-radius:14px; font:700 17px 'Space Grotesk'; }
   .contacttip { display:grid; grid-template-columns:auto 1fr; gap:4px 10px; margin:-2px 4px 4px; font-size:13px; line-height:1.35; color:var(--grijs); }
@@ -324,6 +327,12 @@
     <a class="actie" href="https://www.linkedin.com/in/jmbilderbeek" target="_blank" rel="noopener"><span class="r li"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.3 18.3V10H5.7v8.3zM7 8.8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm11.3 9.5v-4.6c0-2.4-1.3-3.6-3.1-3.6a2.7 2.7 0 0 0-2.4 1.3V10h-2.6v8.3h2.6v-4.4c0-1.2.2-2.3 1.6-2.3s1.4 1.3 1.4 2.4v4.3z"/></svg></span>LinkedIn</a>
   </nav>
 
+  <a class="adresblok agenda" href="https://calendly.com/jmbilderbeek-kaderloos/verkenningsgesprek" target="_blank" rel="noopener">
+    <span class="pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zm12 8H5v10h14zM7 12h4v4H7z"/></svg></span>
+    <span class="tekst"><b>Plan een verkenningsgesprek</b><small>30 minuten via Zoom</small></span>
+    <span class="route">Kies tijd ›</span>
+  </a>
+
   <div class="knoppen">
     <a class="knop hoofd" href="https://vcard.kaderloos.nl/jean-marc-bilderbeek.vcf">Zet me in je contacten</a>
     <dl class="contacttip"><dt>iPhone</dt><dd>tik daarna op <b>Maak nieuw contact</b></dd><dt>Android</dt><dd>tik op <b>Openen</b> en kies Contacten</dd></dl>
@@ -338,6 +347,7 @@
     <span class="tekst"><b>Prins Frederikplein 514</b><small>3071 KS Rotterdam</small></span>
     <span class="route">Route ›</span>
   </a>
+
 
   <section>
     <p class="kicker">Over mij</p>
@@ -535,7 +545,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v36';
+  const mijnVersie = 'v37';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
