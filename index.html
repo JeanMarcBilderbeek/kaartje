@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v44">
+<meta name="versie" content="v45">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -345,7 +345,7 @@
 
   <a class="adresblok agenda" href="https://calendly.com/jmbilderbeek-kaderloos/verkenningsgesprek" target="_blank" rel="noopener">
     <span class="pin"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2zm12 8H5v10h14zM7 12h4v4H7z"/></svg></span>
-    <span class="tekst"><b>Plan 30 minuten met me</b><small>Online en zonder verkooppraatje</small></span>
+    <span class="tekst"><b>Plan 30min met me</b><small>Online en kaderloos</small></span>
     <span class="route">Kies tijd <i>›</i></span>
   </a>
 
@@ -562,7 +562,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v44';
+  const mijnVersie = 'v45';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
