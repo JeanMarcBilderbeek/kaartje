@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8">
-<meta name="versie" content="v41">
+<meta name="versie" content="v42">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jean-Marc Bilderbeek | Kaderloos</title>
 <meta name="description" content="Jean-Marc Bilderbeek. Changemanager, keynote spreker en coach. Kaderloos, Smoothieclub en Blending Forces.">
@@ -556,7 +556,7 @@
   // offline: het kaartje wordt op de telefoon bewaard, zodat het ook zonder internet opent
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(r => r.update()).catch(() => {});
   // nieuwe versie online? dan laadt het kaartje zichzelf opnieuw (bij openen en bij terugkomen in de app)
-  const mijnVersie = 'v41';
+  const mijnVersie = 'v42';
   function checkVersie() {
     if (!navigator.onLine) return;
     fetch('./?check=' + Date.now(), { cache: 'no-store' }).then(r => r.text()).then(t => {
